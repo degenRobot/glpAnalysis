@@ -1,19 +1,21 @@
 import { createEntity } from './deps.ts'
 
-interface IBalance {
+interface IGLP {
   account: string
   amount: number
-  token: string
+  chain: string
   timestamp: number
+  type : string
 }
 
-export const Balance = createEntity<IBalance>('Balance', {
+export const glpChanges = createEntity<IGLP>('glpChanges', {
   account: String,
+  type: String,
   amount: {
     type: Number,
     index: true,
   },
-  token: String,
+  chain: String,
   timestamp: {
     type: Number,
     index: true,
